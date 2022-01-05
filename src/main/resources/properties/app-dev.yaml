@@ -93,6 +93,11 @@ tableau:
 sdlc:
   poller:
     enabled: "false"
+  summaryView:
+    repos: "azuredevops" # source control system used for storing  application code
+    tasks: "azuredevops" # agile sprint tracking system
+    builds: "azuredevops" # cicd tool used for automated build and deployment
+    documents: ""
   confluence:
     enabled: "false" #Configure and set this to true if confluence metrics are required
     host: "test.atlassian.net"

@@ -24,7 +24,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<flow-ref doc:name="JIRA Metrics Flow Reference" doc:id="d42691e3-59fd-475b-a4ef-25b62a046c34" name="collector-jira-metrics-stories-flow" />
 			</route>
 			<route>
-				<flow-ref doc:name="Splunk Metrics Flow Reference" doc:id="d27ee5f5-d6a3-4d16-bc9c-c3d22befbdc9" name="collector-azuredevops-metrics-flow" />
+				<flow-ref doc:name="Splunk Metrics Flow Reference" doc:id="d27ee5f5-d6a3-4d16-bc9c-c3d22befbdc9" name="collector-splunk-metrics-flow" />
 			</route>
 			<route >
 				<flow-ref doc:name="Azure DevOps Metrics Flow Reference" doc:id="5e8ce2e6-9200-4eea-8690-3ef3683940e0" name="collector-azuredevops-metrics-flow"/>
@@ -35,6 +35,18 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:transform doc:name="Build Raw Data Response" doc:id="9a13fe26-670a-4ea5-9031-a9286693506b" >
 					<ee:message >
 						<ee:set-payload resource="dw/aggregation/build-sdlc-raw-data-response.dwl" />
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[vars.rawData ~= false and vars.summaryView ~= true]">
+				<ee:transform doc:name="Set Summary Details" doc:id="d953c057-e81b-4d9f-981e-c200fa1d1a3a" >
+					<ee:variables >
+						<ee:set-variable resource="dw/aggregation/set-sdlc-summary-apps.dwl" variableName="sdlcSummary" />
+					</ee:variables>
+				</ee:transform>
+				<ee:transform doc:name="Build Summary Response" doc:id="796b50c6-c5cf-4416-9cbb-116ffc3a4524" >
+					<ee:message >
+						<ee:set-payload resource="dw/aggregation/build-sdlc-summary-view.dwl" />
 					</ee:message>
 				</ee:transform>
 			</when>

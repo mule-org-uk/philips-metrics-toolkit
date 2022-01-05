@@ -10,27 +10,27 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 			<when expression='#[vars.sdlcDetails.azuredevops.enabled == "true"]'>
 				<scatter-gather doc:name="Scatter-Gather" doc:id="5cd4d4cd-2d45-491b-8f19-afa9b187c014" >
 					<route >
-						<ee:transform doc:name="Set Current Sprint Query" doc:id="1608e151-e417-45c3-9e2f-3f256b418983" >
-							<ee:message >
-							</ee:message>
-							<ee:variables >
-								<ee:set-variable resource="dw/sdlc/azure-sprint-query.dwl" variableName="queryDetails" />
-							</ee:variables>
-						</ee:transform>
-						<flow-ref doc:name="get-azure-devops-query" doc:id="98b4566b-f576-4367-b2a8-b2a6a531e999" name="get-azure-devops-query"/>
-					</route>
-					<route >
-						<ee:transform doc:name="Set Backlog Query" doc:id="4798ed80-41bc-4085-baab-24dff405f3f7">
+						<ee:transform doc:name="Set Backlog Query" doc:id="ce84df7d-2f31-4e10-93cc-d2fe50d5f242">
 							<ee:message>
 							</ee:message>
 							<ee:variables>
 								<ee:set-variable resource="dw/sdlc/azure-backlog-query.dwl" variableName="queryDetails" />
 							</ee:variables>
 						</ee:transform>
-						<flow-ref doc:name="get-azure-devops-query" doc:id="7202ae3f-7635-424d-8f3a-870366189c3f" name="get-azure-devops-query"/>
+						<flow-ref doc:name="get-azure-devops-query" doc:id="08a63d96-8fcc-4fe3-b468-9e2748450c23" name="get-azure-devops-query"/>
 					</route>
 					<route >
-						<flow-ref doc:name="get-azure-devops-builds" doc:id="33041319-2ff3-4249-97ff-1ec46235a36f" name="get-azure-devops-builds"/>
+						<ee:transform doc:name="Set Current Sprint Query" doc:id="f815dc6d-eae4-48ea-b92f-130a88573ba5" >
+							<ee:message >
+							</ee:message>
+							<ee:variables >
+								<ee:set-variable resource="dw/sdlc/azure-sprint-query.dwl" variableName="queryDetails" />
+							</ee:variables>
+						</ee:transform>
+						<flow-ref doc:name="get-azure-devops-query" doc:id="441361e6-c534-4985-9e3d-e6383a88584c" name="get-azure-devops-query"/>
+					</route>
+					<route >
+						<flow-ref doc:name="get-azure-devops-builds" doc:id="04f43640-994d-47c2-a1fa-a0a85366d98b" name="get-azure-devops-builds"/>
 					</route>
 					<route >
 						<flow-ref doc:name="get-azure-devops-repos" doc:id="424e8e8e-ea6a-4cca-a3c5-7d650e27793a" name="get-azure-devops-repos" />

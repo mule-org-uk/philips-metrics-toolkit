@@ -38,6 +38,12 @@ local.properties
 # PDT-specific
 .buildpath
 
+# Local property files
+src/main/resources/properties/*-local.yaml
+src/main/resources/properties/secure/*-local.yaml
+
+
+
 # --------------- #
 # Studio-specific #
 # --------------- #
