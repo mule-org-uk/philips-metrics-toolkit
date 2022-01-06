@@ -1,18 +1,18 @@
 auth:
   
-  orgId: "![yqKEWZ57M3XUasumfcwhVykLsfUM6yOEv2oEJ04vxZc=]"
+  orgId: "![aiRrvPXd3KhGDbbQQhSBg93fIZSb7qJznbfr7ef3zm9KwSv4aTGBLRr+1a/lDrH0]"
   
   # If auth mode = platform-credentials (ignored, otherwise):
   username: "![Zjv8nFIUwDlayZ6O7DP31p1zQRfrwfjbkmi5DyNiD38=]"
   password: "![yqKEWZ57M3XUasumfcwhV35QQl9B5mf5GBon8eY/x8o=]"
   
   # If auth mode = connected-app-credentials (ignored, otherwise):
-  clientId: "![Zjv8nFIUwDlayZ6O7DP31p1zQRfrwfjbkmi5DyNiD38=]"
-  clientSecret: "![yqKEWZ57M3XUasumfcwhV35QQl9B5mf5GBon8eY/x8o=]"
+  clientId: "![zw1bYnRgGCbfhWnNRuodup1Q/fc7O2Vyjt2TdBXNAi73KPUnrDnmNrKy45p33S1n]"
+  clientSecret: "![awtxbwafETmgPpJ/SKnitubZPQNZON/B/gsR1RfDZCgkudoAFrj82nKhkubxfLFM]"
      
 ignoreLists:
-  organizations: ""  #Array: comma-separated values 'orgId1,orgId2'
-  environments: ""  #Array: comma-separated values 'envId1,envId2'
+  organizations: "![xrlYVlEX29cIXBKDMK6h3P3xKxZVqGi0u6lkWPMLLB4BFQVV3QrpJe4+qeg0HqpylchBnL/pUdWVitTW3cpUo5Rsj+2V2VECaC7XbiYq3Y0=]"  #Array: comma-separated values 'orgId1,orgId2'
+  environments: "![Zo2S11uZ+hngCvw/bTqzf9JMoew7Aq/RpXjcBeXsQqew2egewdTd1157suPdJ0U0TKh+5PNYmHVzUfME4ErJfspdij2jDGpopxMpyad8K4o1+LagZxFz4aQEeX3sEbNMSFzHedgygw4+F5JiOAmKGFYZ+DBIe6xHX/R3W/+AGDGc20fbFgXr214d3QDmKAB6bmUdorYpQHo9Es9AOtuvSMqv8VytiqakbLCCtdhq8dqNBcGB6NzxnM3cRCBfGNayBs717YxD1ViOCAIaggHpnoL7EWXOcBrD8csxnQe4Nt4=]"  #Array: comma-separated values 'envId1,envId2'
 
 splunk:
   token: "![yqKEWZ57M3XUasumfcwhV5A3JMblY6G4MCwHM5j5VuA=]"
