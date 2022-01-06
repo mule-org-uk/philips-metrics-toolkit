@@ -258,7 +258,7 @@ Splunk | Total Number of Splunk dashboards
   	- GET Benefits: retrieves business metrics showing the benefits of using the platform
   	- POST Benefits - Load - Splunk Strategy: used to load business metrics to Splunk. For more information, see [Splunk steps](#splunk-steps)
   	- POST Benefits - Load - JSON Strategy: returns business metrics in JSON format.
-  
+
 4. If you want to run the application using the poller mode, you have to configure some properties
 
 ### Properties configurations
@@ -286,6 +286,7 @@ auth.clientId | Anypoint Platform Connected App Client Id. Used when auth.mode i
 auth.clientSecret | Anypoint Platform Connected App Client Secret. Used when auth.mode is connected-app-credentials |
 auth.orgId | Anypoint Platform master org Id |
 ignoreLists.organizations | An array (comma-separated values) of Anypoint Platform sub-organizations id that will be ignored while retrieving metrics e.g "cdfa4e7d-47cd-n1h1-8f39-6a73fbb9ffcb, cdfa4e7d-47cd-n2h2-8f39-6a73fbb9ffcb" |
+ignoreLists.environments | An array (comma-separated values) of Anypoint Platform environments id that will be ignored while retrieving metrics e.g "cdfa4e7d-47cd-n1h1-8f39-6a73fbb9ffcb, cdfa4e7d-47cd-n2h2-8f39-6a73fbb9ffcb" |
 
 #### SDLC metrics collectors properties configuration
 Name | Description | Default Value
@@ -377,7 +378,7 @@ elk.index.metrics | Index for storing Platform operational metrics | metrics
 elk.index.benefits | Index for storing Platform benefits | platformbenefits
 
 ### Tableau steps
- 
+
 Tableau Dashboards use a JSON File Data Source, which is configured to load data from all JSON files present in a given directory, each JSON file representing a Platform Metrics snapshot.
 
 Metrics Toolkit provides the following approaches to generated those files:
