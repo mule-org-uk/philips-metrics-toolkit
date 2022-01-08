@@ -308,6 +308,14 @@ var usableProdVcores = entitlements.vCoresProduction.assigned - entitlements.vCo
 						runtimesUsed: flatten(item.data default []).muleVersion.version distinctBy ($) default[],
 						runtimesUsedTotal: sizeOf(flatten(item.data default []).muleVersion.version distinctBy ($) default [])	
 						
+					}) default [],
+					apps: cloudHubApps filter ($.isProduction) map ((app, index) -> {
+						app: (app.data filter ($.status == APP_STATUS_STARTED) default []) map (data, dataIndex) -> {
+							name: data.domain,
+							weight: data.workers."type".weight,
+							amount: data.workers.amount,
+							total: data.workers."type".weight * data.workers.amount
+						}
 					}) default []
 				},
 				sandbox:{
@@ -329,6 +337,14 @@ var usableProdVcores = entitlements.vCoresProduction.assigned - entitlements.vCo
 						runtimesUsed: flatten(item.data default []).muleVersion.version distinctBy ($) default[],
 						runtimesUsedTotal: sizeOf(flatten(item.data default []).muleVersion.version distinctBy ($) default [])	
 						
+					}) default [],
+					apps: cloudHubApps filter (not $.isProduction) map ((app, index) -> {
+						app: (app.data filter ($.status == APP_STATUS_STARTED) default []) map (data, dataIndex) -> {
+							name: data.domain,
+							weight: data.workers."type".weight,
+							amount: data.workers.amount,
+							total: data.workers."type".weight * data.workers.amount
+						}
 					}) default []
 				}
 			}
