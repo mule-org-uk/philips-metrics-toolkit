@@ -247,9 +247,9 @@ http://www.mulesoft.org/schema/mule/custom-metrics http://www.mulesoft.org/schem
 				</custom-metrics:send>
 			</route>
 			<route >
-				<set-variable value="#[payload.businessGroupId]" doc:name="Set Variable" doc:id="9ef84f3a-7b46-47ad-a391-ced07f5efc6c" variableName="businessGroupId" />
-				<foreach doc:name="For Each" doc:id="642eb98a-3693-4fca-98ad-55fc2dbd6a4e" collection="#[payload.runtimeManagerMetrics.cloudhub.applications.sandbox.apps[0].app default []]">
-					<custom-metrics:send doc:name="Send CloudHub App vCore Usage" doc:id="79dac743-ffe1-439b-99ce-cd113010fb3e" metricName="platform_sandbox_ch_apps_custom_metric">
+				<set-variable value="#[payload.businessGroupId]" doc:name="Set Variable" doc:id="d7952e8a-66b1-41cc-8a45-f977145864da" variableName="businessGroupId" />
+				<foreach doc:name="For Each" doc:id="c97bfaa7-a40c-4690-a3be-c535462deaa5" collection="#[payload.runtimeManagerMetrics.cloudhub.applications.sandbox.apps[0].app default []]">
+					<custom-metrics:send doc:name="Send CloudHub App vCore Usage" doc:id="a71843b0-9da6-485a-aa5e-94f09f23bfc3" metricName="platform_sandbox_ch_apps_custom_metric">
 						<custom-metrics:dimensions>
 							<custom-metrics:dimension dimensionName="businessGroup" value="#[vars.businessGroupId]" />
 							<custom-metrics:dimension dimensionName="environmentType" value="sandbox" />
@@ -265,7 +265,7 @@ http://www.mulesoft.org/schema/mule/custom-metrics http://www.mulesoft.org/schem
 			</route>
 		</scatter-gather>
 	</flow>
-
+	
 	<flow name="loader-anypoint-monitoring-production-custom-metrics-flow" doc:id="0a4c3f70-80d3-4ba2-bb0d-4c994ee3c9ee" >
 		<scatter-gather doc:name="Scatter-Gather" doc:id="abeb78d4-2012-475b-8a5f-90049324373b" >
 			<route >
@@ -367,9 +367,9 @@ http://www.mulesoft.org/schema/mule/custom-metrics http://www.mulesoft.org/schem
 				</custom-metrics:send>
 			</route>
 			<route >
-				<set-variable value="#[payload.businessGroupId]" doc:name="Set Variable" doc:id="21199908-eaa9-44ca-a560-669e9280d7b5" variableName="businessGroupId" />
-				<foreach doc:name="For Each" doc:id="cd8d4be3-83eb-4ce0-9915-e1a9da6a8d7b" collection="#[payload.runtimeManagerMetrics.cloudhub.applications.production.apps[0].app default []]">
-					<custom-metrics:send doc:name="Send CloudHub App vCore Usage" doc:id="4b332002-7276-4bca-8458-b353cb57f3cd" metricName="platform_production_ch_apps_custom_metric">
+				<set-variable value="#[payload.businessGroupId]" doc:name="Set Variable" doc:id="5288b6c1-1bc6-4616-b24f-b6b6d57a8446" variableName="businessGroupId" />
+				<foreach doc:name="For Each" doc:id="b47b6cf7-948e-450e-a6d8-fd326a73322f" collection="#[payload.runtimeManagerMetrics.cloudhub.applications.production.apps[0].app default []]">
+					<custom-metrics:send doc:name="Send CloudHub App vCore Usage" doc:id="70266354-9b0a-40d8-8736-bd98b05e3265" metricName="platform_production_ch_apps_custom_metric">
 						<custom-metrics:dimensions>
 							<custom-metrics:dimension dimensionName="businessGroup" value="#[vars.businessGroupId]" />
 							<custom-metrics:dimension dimensionName="environmentType" value="production" />
